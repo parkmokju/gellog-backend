@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: gellog-backend
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/gellog
+    username: gellog
+    password: ${DB_PASSWORD:gellog}
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+    open-in-view: false

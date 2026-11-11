@@ -1,0 +1,15 @@
+services:
+  postgres:
+    image: postgres:17
+    container_name: gellog-postgres
+    environment:
+      POSTGRES_DB: gellog        # 처음 실행할 때 이 이름으로 DB 생성
+      POSTGRES_USER: gellog
+      POSTGRES_PASSWORD: gellog
+    ports:
+      - "5432:5432"              # 내 PC 5432 → 컨테이너 5432
+    volumes:
+      - gellog-pgdata:/var/lib/postgresql/data   # 컨테이너를 지워도 데이터 유지
+
+volumes:
+  gellog-pgdata:
